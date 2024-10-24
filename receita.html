@@ -1,0 +1,95 @@
+<html>
+    <head>
+    <base 
+    href="index.html"><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEPAY - Cadastro de Receitas</title>
+    <link rel="stylesheet" href="assets/css/receita.css">
+
+    </head>
+    <body>
+        <header class="cabecalho">
+            <div class="logo">WEPAY</div>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Sobre Nós</a>
+                <a href="#">Contato</a>
+                <a href="#">Despesas</a>
+                <a href="#">Receita</a>
+                <a href="#">Log In</a>
+                <a href="#" class="btn">Cadastre-se!</a>
+            </nav>
+        </header>
+
+    <div class="bloco">
+    
+    <div class="container">
+        <div class="logosimbolo">
+            <img src="assets/img/logo_banco.png" alt="">
+        </div>
+        <h1 class="titulo1">Cadastro de Receitas</h1>
+        <form id="receitaForm">
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" name="valor" step="0.01" required>
+            
+            <label for="fonte">Fonte da receita:</label>
+            <select id="fonte" name="fonte" required>
+                <option value="">Selecione uma fonte</option>
+                <option value="salario">Salário</option>
+                <option value="freelance">Freelance</option>
+                <option value="freelance">Aposta</option>
+                <option value="freelance">Loteria</option>
+                <option value="investimentos">Investimentos</option>
+                <option value="outros">Outros</option>
+            </select>
+            
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+            
+            <button type="submit">Adicionar Receita</button>
+        </form>
+        
+        <div id="receitasList"></div>
+    </div>
+
+    <script>
+        const receitaForm = document.getElementById('receitaForm');
+        const receitasList = document.getElementById('receitasList');
+        const receitas = [];
+
+        receitaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const valor = parseFloat(document.getElementById('valor').value);
+            const fonte = document.getElementById('fonte').value;
+            const data = document.getElementById('data').value;
+            
+            const receita = { valor, fonte, data };
+            receitas.push(receita);
+            
+            updateReceitasList();
+            receitaForm.reset();
+        });
+
+        function updateReceitasList() {
+            receitasList.innerHTML = '<h2>Receitas Cadastradas:</h2>';
+            receitas.forEach((receita, index) => {
+                const receitaItem = document.createElement('div');
+                receitaItem.classList.add('receita-item');
+                receitaItem.innerHTML = `
+                    <p><strong>Valor:</strong> R$ ${receita.valor.toFixed(2)}</p>
+                    <p><strong>Fonte:</strong> ${receita.fonte}</p>
+                    <p><strong>Data:</strong> ${formatDate(receita.data)}</p>
+                `;
+                receitasList.appendChild(receitaItem);
+            });
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('pt-BR', options);
+        }
+        </script>
+        </div>
+    </body>
+</html>
