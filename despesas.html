@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros de Despesas - Wepay</title>
+    <link rel="stylesheet" href="assets/css/estilo-despesa.css">
+</head>
+<body>
+    <header>
+        <img src="logo_banco.png" alt="Logo Wepay" class="logo">
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Sobre Nós</a>
+            <a href="#">Contato</a>
+            <a href="#">Despesas</a>
+            <a href="#">Receita</a>
+            <a href="#">Log In</a>
+            <button class="signup-button">Cadastre-se</button>
+        </nav>
+    </header>
+    <div class="ticker">
+        <div class="ticker-content">
+            <span>ARK 234.94 ▼ -0.91%</span>
+            <span>PCC 69.69 ▲ 86.91%</span>
+            <span>AUG 71.16 ▼ -0.44%</span>
+            <span>BAN 57.02 ▼ -15.57%</span>
+            <span>BGR 57.7 ▼ -8.55%</span>
+            <span>BIL 86.01 ▼ -5.44%</span>
+            <span>BUL 67.22 ▼ -14.67%</span>
+            <span>CLK 142.00 ▲ 1.59%</span>
+            <span>BEN 45.19 ▼ -12.36%</span>
+            <span>BRU 750.00 ▼ -0.75%</span>
+            <span>CNT 477.98 ▲ 0.20%</span>
+            <span>CRE 432.63 ▼ -0.11%</span>
+        </div>
+    </div>
+    <main>
+        <h2>Registros de Despesas</h2>
+        <div class="form-container">
+            <form id="form-despesas">
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" name="valor" placeholder="Insira o valor">
+                
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" placeholder="Insira a descrição">
+                
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+                
+                <button type="submit">Registrar Despesa</button>
+            </form>
+        </div>
+        <div class="expense-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody id="despesas-lista">
+                    <!-- As despesas aparecerão aqui -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
