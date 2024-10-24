@@ -5,7 +5,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 header {
     background-color: #1C1F58;
     padding: 10px 20px;
@@ -13,7 +12,6 @@ header {
     align-items: center;
     justify-content: space-between;
 }
-
 .logo {
     height: 40px;
 }
@@ -67,7 +65,12 @@ nav a {
         transform: translateX(-100%);
     }
 }
-
+.G{
+    color: greenyellow;
+}
+.R{
+    color: red;
+}
 main {
     padding: 20px;
     text-align: center;
