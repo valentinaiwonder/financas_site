@@ -1,6 +1,9 @@
 * {
     font-family: "Signika", sans-serif;
     font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 .fonte {
   font-family: "Signika", sans-serif;
@@ -39,7 +42,8 @@
 }
 
 .principal1 {
-    background-color: rgba(84, 91, 254, 1);
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 10%, rgba(84,91,254,1) 62%);
     display: flex;
 }
 .mini1 {
