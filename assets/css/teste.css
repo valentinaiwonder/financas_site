@@ -1,0 +1,96 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+.header {
+    background-color: #101010;
+    padding: 20px;
+    position: relative; /* Importante para a sobreposição dos cards */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Coloca o header abaixo dos cards */
+}
+
+.header .logo {
+    font-size: 24px;
+    color: #00d084;
+}
+.logo1 {
+    padding-left: 30px;
+    width: 200px;
+    height: 50px;
+}
+
+.user-info h1 {
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .new-transaction {
+    background-color: #00d084;
+    color: white;
+    padding-right: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: -50px; /* Move os cards para cima, sobrepondo o header */
+    position: relative;
+    z-index: 2; /* Garante que os cards fiquem acima do header */
+}
+
+.dashboard .box {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona um leve efeito de sombra */
+}
+
+.dashboard .entrada {
+    border-top: 3px solid #00d084;
+}
+
+.dashboard .saida {
+    border-top: 3px solid #e74c3c;
+}
+
+.dashboard .total {
+    background-color: #007f66;
+}
+
+.box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.box p {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.box span {
+    font-size: 12px;
+    color: #bbb;
+}
+
+
